@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.OperatorVisualizerController"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10px;">
+            <Label text="Operators Simulation Visualizer"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Learn arithmetic, relational, logical, and bitwise operators interactively."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="operatorTabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-tab-min-width: 150px; -fx-tab-max-width: 250px; -fx-font-weight: bold;">
+
+            <!-- Arithmetic -->
+            <Tab text="Arithmetic">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #e8f6f3; -fx-border-color: #1abc9c; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter two numbers:" style="-fx-font-weight: bold; -fx-text-fill: #16a085;" />
+                        <TextField fx:id="arithInput1" promptText="Number 1" />
+                        <TextField fx:id="arithInput2" promptText="Number 2" />
+                        <Button text="▶ Simulate Arithmetic" onAction="#simulateArithmetic"
+                                style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="arithCode" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <TextArea fx:id="arithConsole" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                        <FlowPane fx:id="arithVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Relational -->
+            <Tab text="Relational">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f3e5f5; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter two numbers:" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
+                        <TextField fx:id="relInput1" promptText="Number 1" />
+                        <TextField fx:id="relInput2" promptText="Number 2" />
+                        <Button text="▶ Simulate Relational" onAction="#simulateRelational"
+                                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="relCode" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        <TextArea fx:id="relConsole" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                        <FlowPane fx:id="relVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Logical -->
+            <Tab text="Logical">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf2e9; -fx-border-color: #e67e22; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter 0 or 1 for two boolean values:" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <TextField fx:id="logInput1" promptText="Boolean 1 (0 or 1)" />
+                        <TextField fx:id="logInput2" promptText="Boolean 2 (0 or 1)" />
+                        <Button text="▶ Simulate Logical" onAction="#simulateLogical"
+                                style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="logCode" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9f7; -fx-border-color: #c0392b; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #c0392b;" />
+                        <TextArea fx:id="logConsole" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                        <FlowPane fx:id="logVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Bitwise -->
+            <Tab text="Bitwise">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f8ff; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter two numbers:" style="-fx-font-weight: bold; -fx-text-fill: #2980b9;" />
+                        <TextField fx:id="bitInput1" promptText="Number 1" />
+                        <TextField fx:id="bitInput2" promptText="Number 2" />
+                        <Button text="▶ Simulate Bitwise" onAction="#simulateBitwise"
+                                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="bitCode" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f9f9f9; -fx-border-color: #2c3e50; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                        <TextArea fx:id="bitConsole" editable="false" prefRowCount="8" style="-fx-font-family: Consolas;" />
+                        <FlowPane fx:id="bitVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

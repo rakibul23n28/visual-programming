@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.IfElseVisualizerController"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10px;">
+            <Label text="C++ Simulation Visualizer"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Explore multiple simulations interactively."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="simulationTabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-tab-min-width: 150px; -fx-tab-max-width: 250px; -fx-font-weight: bold;">
+
+            <!-- Even/Odd Checker -->
+            <Tab text="Even/Odd Checker">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #e8f6f3; -fx-border-color: #1abc9c; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter a number:" style="-fx-font-weight: bold; -fx-text-fill: #16a085;" />
+                        <TextField fx:id="evenOddInput" promptText="Enter number" />
+                        <Button text="▶ Check Even/Odd" onAction="#checkEvenOdd"
+                                style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="evenOddCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="evenOddConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="evenOddVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Grade Calculator -->
+            <Tab text="Grade Calculator">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f8ff; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter Marks (0-100):" style="-fx-font-weight: bold; -fx-text-fill: #2980b9;" />
+                        <TextField fx:id="gradeInput" promptText="Enter marks" />
+                        <Button text="▶ Calculate Grade" onAction="#calculateGrade"
+                                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="gradeCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf2f8; -fx-border-color: #e91e63; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #c2185b;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="gradeConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="gradeVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Leap Year Checker -->
+            <Tab text="Leap Year Checker">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f3e5f5; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter Year:" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
+                        <TextField fx:id="leapYearInput" promptText="Enter year" />
+                        <Button text="▶ Check Leap Year" onAction="#checkLeapYear"
+                                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="leapYearCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="leapYearConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="leapYearVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Discount Calculator -->
+            <Tab text="Discount Calculator">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf2e9; -fx-border-color: #e67e22; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter Price:" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <TextField fx:id="discountPriceInput" promptText="Enter price" />
+                        <Label text="Enter Discount (%):" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <TextField fx:id="discountPercentInput" promptText="Enter discount %" />
+                        <Button text="▶ Calculate Final Price" onAction="#calculateDiscount"
+                                style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="discountCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="discountConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="discountVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Largest Number -->
+            <Tab text="Largest Number">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f0f0; -fx-border-color: #7f8c8d; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter three numbers:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" />
+                        <TextField fx:id="largestInput1" promptText="Number 1" />
+                        <TextField fx:id="largestInput2" promptText="Number 2" />
+                        <TextField fx:id="largestInput3" promptText="Number 3" />
+                        <Button text="▶ Find Largest" onAction="#findLargest"
+                                style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="largestCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9f9; -fx-border-color: #e74c3c; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #e74c3c;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="largestConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="largestVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- Login Simulation -->
+            <Tab text="Login Simulation">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f2f2f2; -fx-border-color: #34495e; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Username:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;" />
+                        <TextField fx:id="loginUsername" promptText="Enter username" />
+                        <Label text="Password:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;" />
+                        <PasswordField fx:id="loginPassword" promptText="Enter password" />
+                        <Button text="▶ Login" onAction="#loginSimulation"
+                                style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="loginCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f9f9f9; -fx-border-color: #2c3e50; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="loginConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="loginVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vlearn.VisualizerController"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+
+    <!-- Top Header -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10px;">
+            <Label text="C++ Data Type Visualizer"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Explore different C++ data types, their size, values, and code examples."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" />
+        </VBox>
+    </top>
+
+    <!-- Center: TabPane for types -->
+    <center>
+        <TabPane fx:id="memoryTabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-tab-min-width: 120px; -fx-tab-max-width: 200px; -fx-font-weight: bold;">
+        </TabPane>
+    </center>
+</BorderPane>

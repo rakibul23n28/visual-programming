@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.ArrayVisualizerController"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10px;">
+            <Label text="Array Simulation Visualizer"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Learn 1D and 2D arrays interactively."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="arrayTabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-tab-min-width: 150px; -fx-tab-max-width: 250px; -fx-font-weight: bold;">
+
+            <!-- 1D Array -->
+            <Tab text="1D Array">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #e8f6f3; -fx-border-color: #1abc9c; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter numbers (space separated):" style="-fx-font-weight: bold; -fx-text-fill: #16a085;" />
+                        <TextField fx:id="array1DInput" promptText="e.g. 1 2 3 4" />
+                        <Button text="▶ Simulate 1D Array" onAction="#simulate1DArray"
+                                style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="array1DCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <TextArea fx:id="array1DConsole" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <FlowPane fx:id="array1DVisual" hgap="5" vgap="5" prefHeight="80" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- 2D Array -->
+            <Tab text="2D Array">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f3e5f5; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter rows separated by ';' and columns by space:" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
+                        <TextField fx:id="array2DInput" promptText="e.g. 1 2 3;4 5 6;7 8 9" />
+                        <Button text="▶ Simulate 2D Array" onAction="#simulate2DArray"
+                                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="array2DCode" editable="false" prefRowCount="12"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        <TextArea fx:id="array2DConsole" editable="false" prefRowCount="12"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <FlowPane fx:id="array2DVisual" hgap="5" vgap="5" prefHeight="120" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

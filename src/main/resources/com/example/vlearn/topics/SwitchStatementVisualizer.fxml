@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.SwitchVisualizerController"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10px;">
+            <Label text="C++ Switch Statement Visualizer"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Explore multiple switch-case simulations interactively."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="switchTabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-tab-min-width: 120px; -fx-tab-max-width: 200px; -fx-font-weight: bold;">
+
+            <!-- 1. Number to Word -->
+            <Tab text="Number to Word">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f4ff; -fx-border-color: #2980b9; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter a number (1-5):" style="-fx-font-weight: bold; -fx-text-fill: #2980b9;" />
+                        <TextField fx:id="numWordInput" promptText="Enter number"/>
+                        <Button text="▶ Run" onAction="#numToWordSwitch"
+                                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="numWordCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="numWordConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="numWordVisual" hgap="5" vgap="5" prefHeight="80"/>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- 2. Day of Week -->
+            <Tab text="Day of Week">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fff4f4; -fx-border-color: #c0392b; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter number (1-7):" style="-fx-font-weight: bold; -fx-text-fill: #c0392b;" />
+                        <TextField fx:id="dayInput" promptText="Enter number"/>
+                        <Button text="▶ Run" onAction="#dayOfWeekSwitch"
+                                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="dayCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff0; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="dayConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="dayVisual" hgap="5" vgap="5" prefHeight="80"/>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- 3. Menu Choice -->
+            <Tab text="Menu Choice">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f9f9f0; -fx-border-color: #f1c40f; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter choice (1-4):" style="-fx-font-weight: bold; -fx-text-fill: #f39c12;" />
+                        <TextField fx:id="menuInput" promptText="Enter choice"/>
+                        <Button text="▶ Run" onAction="#menuChoiceSwitch"
+                                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="menuCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fffaf0; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="menuConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="menuVisual" hgap="5" vgap="5" prefHeight="80"/>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- 4. Calculator Operation -->
+            <Tab text="Calculator">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f0ff; -fx-border-color: #8e44ad; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter operation number (1:+,2:-,3:*,4:/):" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
+                        <TextField fx:id="calcInput" promptText="Enter choice"/>
+                        <Button text="▶ Run" onAction="#calculatorSwitch"
+                                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="calcCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f4f0ff; -fx-border-color: #8e44ad; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="calcConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="calcVisual" hgap="5" vgap="5" prefHeight="80"/>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <!-- 5. Traffic Light Simulation -->
+            <Tab text="Traffic Light">
+                <SplitPane dividerPositions="0.45">
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fff0f0; -fx-border-color: #e74c3c; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Enter light number (1:Red,2:Yellow,3:Green):" style="-fx-font-weight: bold; -fx-text-fill: #e74c3c;" />
+                        <TextField fx:id="trafficInput" promptText="Enter choice"/>
+                        <Button text="▶ Run" onAction="#trafficSwitch"
+                                style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                        <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="trafficCode" editable="false" prefRowCount="8"
+                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
+                    </VBox>
+                    <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fffaf0; -fx-border-color: #e67e22; -fx-border-width: 2; -fx-border-radius: 6;">
+                        <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
+                        <Label text="Console Output:" style="-fx-font-weight: bold;" />
+                        <TextArea fx:id="trafficConsole" editable="false" prefRowCount="5"
+                                  style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
+                        <Label text="Visual Output:" style="-fx-font-weight: bold;" />
+                        <FlowPane fx:id="trafficVisual" hgap="5" vgap="5" prefHeight="80"/>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>
