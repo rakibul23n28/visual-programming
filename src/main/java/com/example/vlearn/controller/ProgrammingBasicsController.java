@@ -1,5 +1,6 @@
-package com.example.vlearn;
+package com.example.vlearn.controller;
 
+import com.example.vlearn.Utility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

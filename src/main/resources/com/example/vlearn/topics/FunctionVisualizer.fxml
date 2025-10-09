@@ -30,7 +30,7 @@
                         <Button text="▶ Calculate Sum" onAction="#additionFunction"
                                 style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="addCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="addCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">

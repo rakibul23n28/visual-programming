@@ -6,7 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/24.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.vlearn.ProgrammingBasicsController"
+            fx:controller="com.example.vlearn.controller.ProgrammingBasicsController"
             fx:id="rootPane"
             stylesheets="@style.css">
 
