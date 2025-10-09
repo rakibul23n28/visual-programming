@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.controller.algorithm.BFSVisualizerController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- Graph Drawing Pane -->
+    <AnchorPane
+            AnchorPane.topAnchor="10"
+            AnchorPane.leftAnchor="10"
+            AnchorPane.rightAnchor="10"
+            AnchorPane.bottomAnchor="200"
+            style="-fx-background-color: #ffffff; -fx-border-color: #333; -fx-border-width: 2;">
+        <Pane fx:id="graphPane" prefWidth="880" prefHeight="380"
+              style="-fx-background-color: transparent;"/>
+
+        <!-- Graph info -->
+        <Label fx:id="nodeCountLabel" text="Nodes: 0"
+               style="-fx-font-weight: bold;"
+               AnchorPane.topAnchor="5"
+               AnchorPane.rightAnchor="10"/>
+        <Label fx:id="edgeCountLabel" text="Edges: 0"
+               style="-fx-font-weight: bold;"
+               AnchorPane.topAnchor="25"
+               AnchorPane.rightAnchor="10"/>
+        <TextArea fx:id="pathLogArea"
+                  editable="false"
+                  wrapText="true"
+                  prefWidth="180"
+                  prefHeight="150"
+                  AnchorPane.bottomAnchor="20"
+                  AnchorPane.leftAnchor="20"
+                  style="-fx-font-size: 12; -fx-background-color: #f0f0f0cc; -fx-border-color: #333; -fx-border-width: 1;"/>
+    </AnchorPane>
+
+    <!-- Controls panel -->
+    <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10"
+          style="-fx-background-color: #ffffffcc; -fx-padding: 15; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+
+        <!-- Random graph generator -->
+        <HBox spacing="10">
+            <Label text="Random Graph Size:"/>
+            <TextField fx:id="randomGraphSizeField" promptText="Number of nodes" prefWidth="80"/>
+            <Button text="Generate Random Graph" onAction="#handleGenerateRandomGraph"
+                    style="-fx-background-color: #0078D7; -fx-text-fill: white; -fx-background-radius: 10;"/>
+        </HBox>
+
+        <!-- Node operations -->
+        <HBox spacing="10">
+            <TextField fx:id="nodeInputField" promptText="Node label" prefWidth="100"/>
+            <Button text="Add Node" onAction="#handleAddNode" style="-fx-background-color: #0078D7; -fx-text-fill: white;"/>
+            <Button text="Remove Node" onAction="#handleRemoveNode" style="-fx-background-color: #FF4C4C; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Edge operations -->
+        <HBox spacing="10">
+            <TextField fx:id="edgeStartField" promptText="From" prefWidth="70"/>
+            <TextField fx:id="edgeEndField" promptText="To" prefWidth="70"/>
+            <TextField fx:id="edgeWeightField" promptText="Weight" prefWidth="80"/>
+            <Button text="Add Edge" onAction="#handleAddEdge" style="-fx-background-color: #00A300; -fx-text-fill: white;"/>
+            <Button text="Remove Edge" onAction="#handleRemoveEdge" style="-fx-background-color: #FF8C00; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- BFS operations -->
+        <HBox spacing="10">
+            <TextField fx:id="startNodeField" promptText="Start Node" prefWidth="100"/>
+            <Button text="Run BFS" onAction="#handleRunBFS" style="-fx-background-color: #605E5C; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Utility buttons -->
+        <HBox spacing="10">
+            <Button text="Reset Graph" onAction="#handleResetGraph" style="-fx-background-color: #FFB900; -fx-text-fill: white;"/>
+            <Button text="Clear Highlights" onAction="#handleClearHighlights" style="-fx-background-color: #605E5C; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Message label -->
+        <Label fx:id="messageLabel" textFill="red"/>
+    </VBox>
+</AnchorPane>

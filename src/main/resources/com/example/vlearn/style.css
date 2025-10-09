@@ -1,19 +1,11 @@
 /* Root pane background overlay */
 #rootPane {
     -fx-font-family: "Segoe UI", sans-serif;
-
-    -fx-background-image: url("img/bg.png"); /* Relative path to your image */
-    -fx-background-repeat: stretch; /* Or repeat, no-repeat, space, round */
-    -fx-background-size: cover; /* Or contain, or specific dimensions like 100% 100% */
-    -fx-background-position: center center; /* Or top left, etc. */
-
 }
 
 /* Title Label */
 .label {
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,2 );
-}
+    -fx-font-weight: bold;}
 
 /* Main Buttons */
 .button {
@@ -22,15 +14,14 @@
     -fx-font-size: 14px;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
-    -fx-padding: 8 20 8 20;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.35) , 4,0,0,2 );
-    -fx-transition: all 0.2s ease;
+    -fx-padding: 8 20 8 20;-fx-transition: all 0.2s ease;
 }
 
 .button:hover {
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-    -fx-opacity: 0.9;
+    -fx-opacity: 0.85;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.3), 10, 0, 0, 0);
 }
 
 
@@ -40,7 +31,6 @@
     -fx-background-radius: 12;
     -fx-padding: 5;
     -fx-cursor: hand;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 4,0,0,2 );
 }
 
 .hbox:hover {
@@ -69,38 +59,6 @@
     -fx-background-color: #666;
 }
 
-.modern-button {
-    -fx-background-color: #f3f4f6; /* light neutral color */
-    -fx-text-fill: #1f2937;        /* dark gray text */
-    -fx-font-size: 14px;
-    -fx-font-weight: 500;
-    -fx-background-radius: 8;
-    -fx-padding: 10 15 10 15;
-    -fx-cursor: hand;
-    -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);
-}
-
-.modern-button:hover {
-    -fx-background-color: #e5e7eb; /* slightly darker on hover */
-}
-
-.modern-button:pressed {
-    -fx-background-color: #d1d5db; /* pressed state */
-}
-
-.back-button {
-    -fx-background-color: #374151; /* dark button for back */
-    -fx-text-fill: white;
-}
-
-.back-button:hover {
-    -fx-background-color: #4b5563;
-}
-
-.back-button:pressed {
-    -fx-background-color: #1f2937;
-}
 
 /* Main Menu Buttons */
 .modern-button {
@@ -112,7 +70,6 @@
     -fx-padding: 12 20 12 20;
     -fx-cursor: hand;
     -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);
 }
 
 .modern-button:hover {
@@ -125,8 +82,10 @@
 
 /* Back / Exit Button */
 .back-button {
-    -fx-background-color: #374151; /* dark button */
-    -fx-text-fill: white;
+    -fx-text-fill: #df0707;        /* dark gray text */
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+    -fx-padding: 2 2 2 2;
 }
 
 .back-button:hover {

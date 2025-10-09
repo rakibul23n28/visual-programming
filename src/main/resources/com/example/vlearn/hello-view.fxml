@@ -1,96 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane
-            xmlns="http://javafx.com/javafx/24.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.vlearn.HelloController"
-            fx:id="rootPane" stylesheets="@style.css">
+        xmlns="http://javafx.com/javafx/24.0.1"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.vlearn.controller.HelloController"
+        fx:id="rootPane"
+        prefWidth="900" prefHeight="600"
+        style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);">
 
     <children>
 
-        <!-- Overlay -->
-        <Rectangle fill="#00000055"
-                   AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
-                   AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+        <!-- Neon Glow Circles -->
+        <Circle radius="180" layoutX="200" layoutY="150"
+                style="-fx-fill: radial-gradient(center 50% 50%, radius 100%, #00FFFF33, transparent);" />
+        <Circle radius="140" layoutX="700" layoutY="400"
+                style="-fx-fill: radial-gradient(center 50% 50%, radius 100%, #FF00FF33, transparent);" />
 
         <!-- Title -->
-        <Label alignment="CENTER" contentDisplay="CENTER" text="Learning by Visual" textAlignment="CENTER" textFill="white"
+        <Label alignment="CENTER" contentDisplay="CENTER" text="Visual Learning"
+               textAlignment="CENTER" textFill="#00FFFF"
                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
             <font>
-                <Font name="Franklin Gothic Demi" size="36" />
+                <Font name="Arcade Classic" size="50" />
             </font>
+            <style>
+                -fx-effect: dropshadow(gaussian, #00FFFF, 4, 0.5, 0, 0);
+            </style>
         </Label>
 
-        <!-- VBox for Main Buttons -->
-        <!-- Main Buttons -->
-        <VBox spacing="20" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="150.0">
+        <!-- Main Sections -->
+        <VBox spacing="50" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.topAnchor="150.0" alignment="CENTER">
+
             <children>
-                <Button fx:id="btnProgrammingBasics" onAction="#openProgrammingBasics"
-                        maxWidth="250" style="-fx-background-color: #ff8900; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 12;"
-                        text="Programming Basics" />
 
-                <Button fx:id="btnDataStructure" onAction="#openDataStructure"
-                        maxWidth="250" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 12;"
-                        text="Data Structure" />
+                <!-- Programming Basics Section -->
+                <VBox spacing="15" alignment="CENTER">
+                    <Label text="PROGRAMMING BASICS" textFill="#FF00FF">
+                        <font>
+                            <Font name="Arcade Classic" size="28"/>
+                        </font>
+                        <style>
+                            -fx-effect: dropshadow(gaussian, #FF00FF, 3, 0.5, 0, 0);
+                        </style>
+                    </Label>
+                    <Button fx:id="btnProgrammingBasics" onAction="#openProgrammingBasics"
+                            maxWidth="300"
+                            style="-fx-background-color: linear-gradient(to right, #FF00FF, #FF69B4);
+                                   -fx-text-fill: #FFFFFF;
+                                   -fx-font-size: 20px;
+                                   -fx-font-family: 'Arcade Classic';
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 16;
+                                   -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, #FF00FF, 3, 0.5, 0, 0);" text="START" />
+                </VBox>
 
-                <Button fx:id="btnAlgorithm" onAction="#openAlgorithm"
-                        maxWidth="250" style="-fx-background-color: #33cc33; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 12;"
-                        text="Algorithm" />
+                <!-- Simulation Path Section -->
+                <VBox spacing="20" alignment="CENTER">
+                    <Label text="SIMULATION PATH" textFill="#00FFFF">
+                        <font>
+                            <Font name="Arcade Classic" size="28"/>
+                        </font>
+                        <style>
+                            -fx-effect: dropshadow(gaussian, #00FFFF, 3, 0.5, 0, 0);
+                        </style>
+                    </Label>
+                    <VBox spacing="15" alignment="CENTER">
 
-                <Button fx:id="btnAIVisual" onAction="#openAIVisual"
-                        maxWidth="250" style="-fx-background-color: #cc33cc; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 12;"
-                        text="AI Visual" />
+                        <Button fx:id="btnDataStructure" onAction="#openDataStructure"
+                                maxWidth="300"
+                                style="-fx-background-color: linear-gradient(to right, #00FFFF, #1E90FF);
+                                       -fx-text-fill: #FFFFFF;
+                                       -fx-font-size: 20px;
+                                       -fx-font-family: 'Arcade Classic';
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 16;
+                                       -fx-cursor: hand;
+                                       -fx-effect: dropshadow(gaussian, #00FFFF, 3, 0.5, 0, 0);" text="DATA STRUCTURE" />
+
+                        <Button fx:id="btnAlgorithm" onAction="#openAlgorithm"
+                                maxWidth="300"
+                                style="-fx-background-color: linear-gradient(to right, #FF4500, #FF6347);
+                                       -fx-text-fill: #FFFFFF;
+                                       -fx-font-size: 20px;
+                                       -fx-font-family: 'Arcade Classic';
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 16;
+                                       -fx-cursor: hand;
+                                       -fx-effect: dropshadow(gaussian, #FF4500, 3, 0.5, 0, 0);" text="ALGORITHM" />
+
+                    </VBox>
+                </VBox>
+
             </children>
-            <alignment>
-                CENTER
-            </alignment>
         </VBox>
 
-        <!-- Bottom-right Exit button with icon -->
-        <Button prefHeight="35" prefWidth="120" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20"
-                style="-fx-background-color: #444; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 12;">
-            <graphic>
-                <HBox spacing="5" alignment="CENTER">
-                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                        <image>
-                            <Image url="@img/logout.png" />
-                        </image>
-                    </ImageView>
-                    <Label text="Exit" textFill="WHITE"/>
-                </HBox>
-            </graphic>
-        </Button>
+        <!-- Settings MenuButton -->
+        <MenuButton fx:id="btnSettings"
+                    AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+                    text=""
+                    style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #008B8B);
+                           -fx-background-radius: 28;
+                           -fx-cursor: hand;
+                           -fx-padding: 5;
+                           -fx-effect: dropshadow(gaussian, #00FFFF, 4, 0.5, 0, 0);"
+                    graphicTextGap="0"
+                    focusTraversable="false">
 
-        <!-- Top-right Settings HBox -->
-        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="130.0" spacing="5"
-              AnchorPane.topAnchor="20.0" AnchorPane.rightAnchor="20.0"
-              style="-fx-background-color: rgba(68, 68, 68, 0.8); -fx-background-radius: 12; -fx-padding: 5; -fx-cursor: hand;">
-            <children>
-                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@img/settings.png" />
-                    </image>
-                </ImageView>
-                <Label text="Settings" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-            </children>
-        </HBox>
+            <!-- Settings Icon -->
+            <graphic>
+                <Label text="⚙" style="-fx-text-fill: #00FFFF; -fx-font-size: 20px;"/>
+            </graphic>
+
+            <items>
+                <CustomMenuItem>
+                    <content>
+                        <Label text="Logout"
+                               onMouseClicked="#handleLogout"
+                               style="-fx-text-fill: #FF4500;
+                                      -fx-font-weight: bold;
+                                      -fx-font-family: 'Arcade Classic';
+                                      -fx-background-radius: 10;
+                                      -fx-padding: 8 20 8 20;">
+                            <style>
+                                .label:hover {
+                                -fx-background-color: rgba(255,69,0,0.2);
+                                -fx-cursor: hand;
+                                }
+                            </style>
+                        </Label>
+                    </content>
+                </CustomMenuItem>
+
+                <CustomMenuItem>
+                    <content>
+                        <Label text="Exit"
+                               onMouseClicked="#handleExit"
+                               style="-fx-text-fill: #FF6347;
+                                      -fx-font-weight: bold;
+                                      -fx-font-family: 'Arcade Classic';
+                                      -fx-background-radius: 10;
+                                      -fx-padding: 8 20 8 20;">
+                            <style>
+                                .label:hover {
+                                -fx-background-color: rgba(255,99,71,0.2);
+                                -fx-cursor: hand;
+                                }
+                            </style>
+                        </Label>
+                    </content>
+                </CustomMenuItem>
+            </items>
+
+            <tooltip>
+                <Tooltip text="Settings"/>
+            </tooltip>
+        </MenuButton>
 
     </children>
 </AnchorPane>
-
-
-

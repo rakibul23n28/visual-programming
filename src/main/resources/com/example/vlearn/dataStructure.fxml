@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vlearn.controller.DataStructureController"
+            fx:id="rootPane"
+            stylesheets="@style.css">
+
+    <!-- Main Content with Resizable Panels -->
+    <center>
+        <SplitPane dividerPositions="0.18">
+            <!-- Left Sidebar -->
+            <ScrollPane fx:id="leftSidebar" fitToWidth="true" style="-fx-background: transparent;" prefWidth="220" minWidth="150" maxWidth="250">
+                <content>
+                    <VBox spacing="12" style="-fx-padding: 15;">
+                        <Button text="❮❮" onAction="#goBack" maxWidth="Infinity" styleClass="back-button"/>
+                        <Button fx:id="btnArray" text="Array" maxWidth="Infinity" onAction="#openArray" styleClass="modern-button"/>
+                        <Button fx:id="btnLinkedList" text="Linked List" maxWidth="Infinity" onAction="#openLinkedList" styleClass="modern-button"/>
+                        <Button fx:id="btnStack" text="Stack" maxWidth="Infinity" onAction="#openStack" styleClass="modern-button"/>
+                        <Button fx:id="btnQueue" text="Queue" maxWidth="Infinity" onAction="#openQueue" styleClass="modern-button"/>
+                        <Button fx:id="btnTree" text="Tree" maxWidth="Infinity" onAction="#openTree" styleClass="modern-button"/>
+                        <Button fx:id="btnGraph" text="Graph" maxWidth="Infinity" onAction="#openGraph" styleClass="modern-button"/>
+                        <Button fx:id="btnHashMap" text="HashMap / Dictionary" maxWidth="Infinity" onAction="#openHashMap" styleClass="modern-button"/>
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Center Simulation Area -->
+            <AnchorPane fx:id="simulationPane" style="-fx-background-color:#1f1f1f;">
+                <Label text="Data Structure Simulation will appear here"
+                       textFill="white"
+                       layoutX="50"
+                       layoutY="50"/>
+            </AnchorPane>
+        </SplitPane>
+    </center>
+</BorderPane>

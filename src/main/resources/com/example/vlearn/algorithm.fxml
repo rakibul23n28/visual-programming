@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.vlearn.controller.AlgorithmVisualizerController"
+            fx:id="rootPane"
+            stylesheets="@style.css">
+
+    <!-- Main Content with Split Panels -->
+    <center>
+        <SplitPane dividerPositions="0.18">
+
+            <!-- Left Sidebar: Algorithm Selection -->
+            <ScrollPane fx:id="leftSidebar" fitToWidth="true" style="-fx-background: transparent;" prefWidth="220" minWidth="150" maxWidth="250">
+                <content>
+                    <VBox spacing="12" style="-fx-padding: 15;">
+                        <Button text="❮❮" onAction="#goBack" maxWidth="Infinity" styleClass="back-button"/>
+                        <Button fx:id="btnBubbleSort" text="Bubble Sort" maxWidth="Infinity" onAction="#openBubbleSort" styleClass="modern-button"/>
+                        <Button fx:id="btnMergeSort" text="Merge Sort" maxWidth="Infinity" onAction="#openMergeSort" styleClass="modern-button"/>
+                        <Button fx:id="btnDijkstra" text="Dijkstra" maxWidth="Infinity" onAction="#openDijkstra" styleClass="modern-button"/>
+                        <Button fx:id="btnBFS" text="BFS (Graph)" maxWidth="Infinity" onAction="#openBFS" styleClass="modern-button"/>
+                        <Button fx:id="btnDFS" text="DFS (Graph)" maxWidth="Infinity" onAction="#openDFS" styleClass="modern-button"/>
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Center Simulation Area -->
+            <AnchorPane fx:id="simulationPane" style="-fx-background-color:#1f1f1f;">
+                <!-- Default Label -->
+                <Label fx:id="simulationLabel"
+                       text="Select an algorithm from the left to visualize"
+                       textFill="white"
+                       layoutX="50"
+                       layoutY="50"/>
+
+                <!-- Placeholder for Array/Graph Visuals -->
+                <Pane fx:id="arrayPane" layoutX="50" layoutY="100" prefWidth="600" prefHeight="400"/>
+                <Pane fx:id="graphPane" layoutX="50" layoutY="100" prefWidth="600" prefHeight="400"/>
+            </AnchorPane>
+        </SplitPane>
+    </center>
+</BorderPane>

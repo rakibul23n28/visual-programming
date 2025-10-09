@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.vlearn.IOVisualizerController"
+            fx:controller="com.example.vlearn.controller.programming_basic.IOVisualizerController"
             style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
 
     <top>
@@ -29,12 +29,12 @@
                         <Button text="▶ Echo" onAction="#simulateEcho"
                                 style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="echoCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="echoCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="echoConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="echoConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="echoVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -53,12 +53,12 @@
                         <Button text="▶ Calculate Sum" onAction="#simulateSum"
                                 style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="sumCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="sumCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf2f8; -fx-border-color: #e91e63; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="sumConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="sumConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="sumVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -79,12 +79,12 @@
                         <Button text="▶ Find Maximum" onAction="#simulateMax"
                                 style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="maxCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="maxCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="maxConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="maxConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="maxVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -101,12 +101,12 @@
                         <Button text="▶ Check Even/Odd" onAction="#simulateEvenOdd"
                                 style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="evenOddCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="evenOddCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="evenOddConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="evenOddConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="evenOddVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -123,12 +123,12 @@
                         <Button text="▶ Calculate Factorial" onAction="#simulateFactorial"
                                 style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="factCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="factCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf9f9; -fx-border-color: #e74c3c; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="factConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="factConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="factVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -145,12 +145,12 @@
                         <Button text="▶ Generate Series" onAction="#simulateFibonacci"
                                 style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="fibCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="fibCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f9f0ff; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="fibConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="fibConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="fibVisual" hgap="5" vgap="5" prefHeight="80" />
@@ -167,12 +167,12 @@
                         <Button text="▶ Check Prime" onAction="#simulatePrime"
                                 style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="primeCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="primeCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9f9; -fx-border-color: #e74c3c; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Console Output:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="primeConsole" editable="false" prefRowCount="5"
+                        <TextArea fx:id="primeConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <Label text="Visual Output:" style="-fx-font-weight: bold;" />
                         <FlowPane fx:id="primeVisual" hgap="5" vgap="5" prefHeight="80" />

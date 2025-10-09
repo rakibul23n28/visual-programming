@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.vlearn.StringVisualizerController"
+            fx:controller="com.example.vlearn.controller.programming_basic.StringVisualizerController"
             style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
 
     <top>

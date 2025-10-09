@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.controller.algorithm.BubbleSortVisualizerController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- Array Visualization Pane -->
+    <AnchorPane
+            AnchorPane.topAnchor="10"
+            AnchorPane.leftAnchor="10"
+            AnchorPane.rightAnchor="10"
+            AnchorPane.bottomAnchor="200"
+            style="-fx-background-color: #ffffff; -fx-border-color: #333; -fx-border-width: 2;">
+        <Pane fx:id="arrayPane" prefWidth="880" prefHeight="380"
+              style="-fx-background-color: transparent;"/>
+
+
+    </AnchorPane>
+
+    <!-- Controls panel -->
+    <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10"
+          style="-fx-background-color: #ffffffcc; -fx-padding: 15; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+
+        <!-- Array generator -->
+        <HBox spacing="10">
+            <Label text="Array (comma-separated):"/>
+            <TextField fx:id="arrayInputField" promptText="e.g. 5,3,8,1" prefWidth="150"/>
+            <Button text="Generate Array" onAction="#handleGenerateArray"
+                    style="-fx-background-color: #0078D7; -fx-text-fill: white; -fx-background-radius: 10;"/>
+        </HBox>
+
+        <!-- BubbleSort operations -->
+        <HBox spacing="10">
+            <Button text="Run BubbleSort" onAction="#handleRunBubbleSort"
+                    style="-fx-background-color: #605E5C; -fx-text-fill: white;"/>
+            <Button text="Reset Array" onAction="#handleResetArray"
+                    style="-fx-background-color: #FFB900; -fx-text-fill: white;"/>
+            <Button text="Clear Highlights" onAction="#handleClearHighlights"
+                    style="-fx-background-color: #605E5C; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Message label -->
+        <Label fx:id="messageLabel" textFill="red"/>
+    </VBox>
+</AnchorPane>

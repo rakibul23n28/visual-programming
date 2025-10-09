@@ -2,9 +2,11 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.vlearn.LoopsVisualizerController"
-            style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.vlearn.controller.programming_basic.LoopsVisualizerController"
+            style="-fx-background-color: #ffffff;">
 
     <top>
         <VBox spacing="10" style="-fx-padding: 10px;">
@@ -19,9 +21,10 @@
         <TabPane fx:id="loopTabPane" tabClosingPolicy="UNAVAILABLE"
                  style="-fx-tab-min-width: 120px; -fx-tab-max-width: 200px; -fx-font-weight: bold;">
 
-            <!-- FOR Loop Tab -->
+            <!-- FOR LOOP TAB -->
             <Tab text="for loop">
                 <SplitPane dividerPositions="0.45">
+
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #e8f6f3; -fx-border-color: #1abc9c; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="for loop parameters" style="-fx-font-weight: bold; -fx-text-fill: #16a085;" />
                         <GridPane hgap="10" vgap="10">
@@ -34,11 +37,12 @@
                             <Label text="Increment:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
                             <TextField fx:id="forIncField" text="i++" GridPane.rowIndex="2" GridPane.columnIndex="1" />
                         </GridPane>
+
                         <Button text="▶ Simulate for loop" onAction="#simulateForLoop"
                                 style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="forCodeArea" editable="false" prefRowCount="10"
-                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
+                        <TextFlow fx:id="forCodeFlow" style="-fx-background-color: #2c3e50; -fx-padding: 10;" />
                     </VBox>
 
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
@@ -53,15 +57,16 @@
                             <FlowPane fx:id="forVisualOutput" hgap="5" vgap="5" />
                         </ScrollPane>
                         <Label text="Console Output:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="forConsoleOutput" editable="false" prefRowCount="10"
+                        <TextArea fx:id="forConsoleOutput" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
                     </VBox>
                 </SplitPane>
             </Tab>
 
-            <!-- WHILE Loop Tab -->
+            <!-- WHILE LOOP TAB -->
             <Tab text="while loop">
                 <SplitPane dividerPositions="0.45">
+
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f8ff; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="while loop parameters" style="-fx-font-weight: bold; -fx-text-fill: #2980b9;" />
                         <GridPane hgap="10" vgap="10">
@@ -74,11 +79,12 @@
                             <Label text="Increment:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
                             <TextField fx:id="whileIncField" text="i++" GridPane.rowIndex="2" GridPane.columnIndex="1" />
                         </GridPane>
+
                         <Button text="▶ Simulate while loop" onAction="#simulateWhileLoop"
                                 style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="whileCodeArea" editable="false" prefRowCount="10"
-                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
+                        <TextFlow fx:id="whileCodeFlow" style="-fx-background-color: #2c3e50; -fx-padding: 10;" />
                     </VBox>
 
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fdf2f8; -fx-border-color: #e91e63; -fx-border-width: 2; -fx-border-radius: 6;">
@@ -93,15 +99,16 @@
                             <FlowPane fx:id="whileVisualOutput" hgap="5" vgap="5" />
                         </ScrollPane>
                         <Label text="Console Output:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="whileConsoleOutput" editable="false" prefRowCount="10"
+                        <TextArea fx:id="whileConsoleOutput" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
                     </VBox>
                 </SplitPane>
             </Tab>
 
-            <!-- DO-WHILE Loop Tab -->
+            <!-- DO-WHILE LOOP TAB -->
             <Tab text="do-while loop">
                 <SplitPane dividerPositions="0.45">
+
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f3e5f5; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="do-while loop parameters" style="-fx-font-weight: bold; -fx-text-fill: #8e44ad;" />
                         <GridPane hgap="10" vgap="10">
@@ -114,11 +121,12 @@
                             <Label text="Increment:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
                             <TextField fx:id="doWhileIncField" text="i++" GridPane.rowIndex="2" GridPane.columnIndex="1" />
                         </GridPane>
+
                         <Button text="▶ Simulate do-while loop" onAction="#simulateDoWhileLoop"
                                 style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="doWhileCodeArea" editable="false" prefRowCount="10"
-                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
+                        <TextFlow fx:id="doWhileCodeFlow" style="-fx-background-color: #2c3e50; -fx-padding: 10;" />
                     </VBox>
 
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0fff4; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 6;">
@@ -133,12 +141,11 @@
                             <FlowPane fx:id="doWhileVisualOutput" hgap="5" vgap="5" />
                         </ScrollPane>
                         <Label text="Console Output:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-                        <TextArea fx:id="doWhileConsoleOutput" editable="false" prefRowCount="10"
+                        <TextArea fx:id="doWhileConsoleOutput" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: 'Consolas';" />
                     </VBox>
                 </SplitPane>
             </Tab>
-
         </TabPane>
     </center>
 </BorderPane>

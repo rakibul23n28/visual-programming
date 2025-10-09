@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.vlearn.ArrayVisualizerController"
+            fx:controller="com.example.vlearn.controller.programming_basic.ArrayVisualizerController"
             style="-fx-background-color: linear-gradient(to bottom, #fdfbfb, #ebedee);">
 
     <top>
@@ -29,12 +29,12 @@
                         <Button text="▶ Simulate 1D Array" onAction="#simulate1DArray"
                                 style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-                        <TextArea fx:id="array1DCode" editable="false" prefRowCount="8"
+                        <TextArea fx:id="array1DCode" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Simulation Output:" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
-                        <TextArea fx:id="array1DConsole" editable="false" prefRowCount="8"
+                        <TextArea fx:id="array1DConsole" editable="false" prefRowCount="20"
                                   style="-fx-control-inner-background: #fdfdfd; -fx-font-family: Consolas;" />
                         <FlowPane fx:id="array1DVisual" hgap="5" vgap="5" prefHeight="80" />
                     </VBox>
