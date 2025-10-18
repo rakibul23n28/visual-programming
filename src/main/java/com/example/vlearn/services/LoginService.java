@@ -38,9 +38,12 @@ public class LoginService implements ILoginService {
             }
         });
     }
+<<<<<<< HEAD
     public boolean isTokenValid(String token) {
         // For now, consider any non-empty token valid
         return token != null && !token.isEmpty();
     }
+=======
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 }
 

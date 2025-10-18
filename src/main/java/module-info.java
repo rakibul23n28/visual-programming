@@ -8,7 +8,10 @@ module com.example.vlearn {
     requires eu.hansolo.tilesfx;
     requires com.hivemq.client.mqtt;
     requires com.fasterxml.jackson.databind;
+<<<<<<< HEAD
     requires java.prefs;
+=======
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 
 
     opens com.example.vlearn to javafx.fxml;
@@ -20,10 +23,13 @@ module com.example.vlearn {
     opens com.example.vlearn.db to javafx.fxml;
     exports com.example.vlearn.models;
     opens com.example.vlearn.models to javafx.fxml;
+<<<<<<< HEAD
     exports com.example.vlearn.controller.programming_basic;
     opens com.example.vlearn.controller.programming_basic to javafx.fxml;
     exports com.example.vlearn.controller.dataStructure;
     opens com.example.vlearn.controller.dataStructure to javafx.fxml;
     exports com.example.vlearn.controller.algorithm;
     opens com.example.vlearn.controller.algorithm to javafx.fxml;
+=======
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 }

@@ -7,7 +7,10 @@
 <?import javafx.scene.layout.VBox?>
 <StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vlearn.controller.LoginController"
            stylesheets="@login.css"
+<<<<<<< HEAD
            style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);"
+=======
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 >
     <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600"/>
     <VBox alignment="CENTER" spacing="20" styleClass="login-form">

@@ -55,6 +55,13 @@ public class SignupController {
     @FXML
     public void initialize() throws Exception {
         userService = new UserService();
+<<<<<<< HEAD
+=======
+        // Load background image from Unsplash URL with opacity set for transparency effect
+        Image image = new Image("https://images.unsplash.com/photo-1756877468830-9fbf44ee34a8");
+        backgroundImage.setImage(image);
+        backgroundImage.setOpacity(0.6);
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 
 
         submitBtn.setOnAction(e -> {

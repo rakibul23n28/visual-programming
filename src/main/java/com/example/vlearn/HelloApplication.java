@@ -26,11 +26,14 @@ public class HelloApplication extends Application {
             SignupController signupController = prepareSignUpScene();
             HelloController dashboardController = prepareDashboard();
 
+<<<<<<< HEAD
             // Set stage and scenes for HelloController
             dashboardController.setPrimaryStage(primaryStage);
             dashboardController.setLoginScene(loginScene);
             dashboardController.setDashboardScene(dashboardScene);
 
+=======
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
             loginController1.setPrimaryStage(primaryStage);
             loginController1.setSignUpScene(signupScene);
             loginController1.setDashboardScene(dashboardScene);
@@ -74,7 +77,11 @@ public class HelloApplication extends Application {
         FXMLLoader signUpLoader = new FXMLLoader(getClass().getResource("signup-form.fxml"));
         Parent signUpRoot = signUpLoader.load();
         SignupController signupController = signUpLoader.getController();
+<<<<<<< HEAD
         signupScene = new Scene(signUpRoot, 800,600);
+=======
+        signupScene = new Scene(signUpRoot);
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 //        signupScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/login.css")).toExternalForm());
         signupScene.widthProperty().addListener((obs, oldVal, newVal) -> {
             signUpLoader.<SignupController>getController().backgroundImage.setFitWidth(newVal.doubleValue());
@@ -90,7 +97,11 @@ public class HelloApplication extends Application {
         FXMLLoader dashboardLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Parent dashboardRoot = dashboardLoader.load();
         HelloController dashboardController = dashboardLoader.getController();
+<<<<<<< HEAD
         dashboardScene = new Scene(dashboardRoot, 800,600);
+=======
+        dashboardScene = new Scene(dashboardRoot);
+>>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 //        dashboardScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 //        dashboardScene.widthProperty().addListener((obs, oldVal, newVal) -> {
 //            dashboardLoader.<DashboardController>getController().backgroundImage.setFitWidth(newVal.doubleValue());
