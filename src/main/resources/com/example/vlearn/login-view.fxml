@@ -5,14 +5,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vlearn.controller.LoginController"
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.vlearn.controller.LoginController"
            stylesheets="@login.css"
-<<<<<<< HEAD
-           style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);"
-=======
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
->
+           style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);">
+
     <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600"/>
+
     <VBox alignment="CENTER" spacing="20" styleClass="login-form">
         <Label text="Welcome" styleClass="title"/>
         <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
@@ -23,4 +24,5 @@
             <Hyperlink text="Sign Up" onAction="#handleSignUp" style="-fx-font-weight: bold; -fx-text-fill: #1e90ff;"/>
         </HBox>
     </VBox>
+
 </StackPane>

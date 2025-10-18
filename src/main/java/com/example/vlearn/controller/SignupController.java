@@ -21,26 +21,20 @@ public class SignupController {
     private TextField firstNameField;
     @FXML
     private TextField lastNameField;
-
     @FXML
     private TextField usernameField;
-
     @FXML
     private TextField retypePasswordField;
-
     @FXML
     private PasswordField passwordField;
-
     @FXML
     private Button submitBtn;
-
     @FXML
     public ImageView backgroundImage;
-
     @FXML
     private Label messageLabel;
-    IUserService userService;
 
+    IUserService userService;
     private Scene sceneLogin;
     private Stage primaryStage;
 
@@ -55,13 +49,6 @@ public class SignupController {
     @FXML
     public void initialize() throws Exception {
         userService = new UserService();
-<<<<<<< HEAD
-=======
-        // Load background image from Unsplash URL with opacity set for transparency effect
-        Image image = new Image("https://images.unsplash.com/photo-1756877468830-9fbf44ee34a8");
-        backgroundImage.setImage(image);
-        backgroundImage.setOpacity(0.6);
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 
 
         submitBtn.setOnAction(e -> {
@@ -100,19 +87,14 @@ public class SignupController {
                                 if (primaryStage != null && sceneLogin != null) {
                                     primaryStage.setScene(sceneLogin);
                                 }
-                                // Further UI updates with savedUser
                             }))
                             .exceptionally(ex -> {
-//                                throw new RuntimeException(ex);
                                 Platform.runLater(() -> CustomAlert.showAlert("User Service", "Failed to save user: " + ex.getLocalizedMessage(), Alert.AlertType.ERROR));
                                 return null;
                             });
                 });
-            } else {
-                // Validation failed, alert already shown in the method
             }
         });
-
     }
 
     public CompletableFuture<Boolean> validationAsync() {

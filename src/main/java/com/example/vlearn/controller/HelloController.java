@@ -76,10 +76,4 @@ public class HelloController {
     private void openAlgorithm(ActionEvent event) throws IOException {
         Utility.switchScene(event, "/com/example/vlearn/algorithm.fxml", "Algorithm");
     }
-
-    @FXML
-    private void openAIVisual(ActionEvent event) throws IOException {
-        Utility.switchScene(event, "/com/example/vlearn/ai-visual.fxml", "AI Visual");
-    }
 }
-s

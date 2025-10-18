@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<<<<<<< HEAD
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
-=======
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Rectangle?>
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 <?import javafx.scene.text.Font?>
 
 <AnchorPane
@@ -16,7 +10,6 @@
         xmlns:fx="http://javafx.com/fxml/1"
         fx:controller="com.example.vlearn.controller.HelloController"
         fx:id="rootPane"
-<<<<<<< HEAD
         prefWidth="900" prefHeight="600"
         style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);">
 
@@ -34,34 +27,13 @@
                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
             <font>
                 <Font name="Arcade Classic" size="50" />
-=======
-        stylesheets="@style.css">
-
-    <children>
-
-        <!-- Background Overlay -->
-        <Rectangle fill="#0d1117"
-                   AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
-                   AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
-
-        <!-- Title -->
-        <Label alignment="CENTER" contentDisplay="CENTER" text="Learning by Visual"
-               textAlignment="CENTER" textFill="#F5F5F5"
-               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
-            <font>
-                <Font name="Segoe UI Black" size="42" />
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
             </font>
             <style>
                 -fx-effect: dropshadow(gaussian, #00FFFF, 4, 0.5, 0, 0);
             </style>
         </Label>
 
-<<<<<<< HEAD
         <!-- Main Sections -->
-=======
-        <!-- VBox for Main Sections -->
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
         <VBox spacing="50" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="0"
               AnchorPane.rightAnchor="0" AnchorPane.topAnchor="150.0" alignment="CENTER">
 
@@ -69,7 +41,6 @@
 
                 <!-- Programming Basics Section -->
                 <VBox spacing="15" alignment="CENTER">
-<<<<<<< HEAD
                     <Label text="PROGRAMMING BASICS" textFill="#FF00FF">
                         <font>
                             <Font name="Arcade Classic" size="28"/>
@@ -88,27 +59,10 @@
                                    -fx-background-radius: 16;
                                    -fx-cursor: hand;
                                    -fx-effect: dropshadow(gaussian, #FF00FF, 3, 0.5, 0, 0);" text="START" />
-=======
-                    <Label text="Programming Basics" textFill="#E0E0E0">
-                        <font>
-                            <Font name="Segoe UI Semibold" size="26"/>
-                        </font>
-                    </Label>
-                    <Button fx:id="btnProgrammingBasics" onAction="#openProgrammingBasics"
-                            maxWidth="300"
-                            style="-fx-background-color: linear-gradient(to right, #0078D7, #00C0A3);
-                                   -fx-text-fill: white;
-                                   -fx-font-size: 18px;
-                                   -fx-font-weight: bold;
-                                   -fx-background-radius: 14;
-                                   -fx-cursor: hand;"
-                            text="Start Learning" />
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
                 </VBox>
 
                 <!-- Simulation Path Section -->
                 <VBox spacing="20" alignment="CENTER">
-<<<<<<< HEAD
                     <Label text="SIMULATION PATH" textFill="#00FFFF">
                         <font>
                             <Font name="Arcade Classic" size="28"/>
@@ -141,50 +95,13 @@
                                        -fx-cursor: hand;
                                        -fx-effect: dropshadow(gaussian, #FF4500, 3, 0.5, 0, 0);" text="ALGORITHM" />
 
-=======
-                    <Label text="Simulation Path" textFill="#E0E0E0">
-                        <font>
-                            <Font name="Segoe UI Semibold" size="26"/>
-                        </font>
-                    </Label>
-                    <VBox spacing="15" alignment="CENTER">
-                        <Button fx:id="btnDataStructure" onAction="#openDataStructure"
-                                maxWidth="300"
-                                style="-fx-background-color: #1E90FF;
-                                       -fx-text-fill: white;
-                                       -fx-font-size: 18px;
-                                       -fx-font-weight: bold;
-                                       -fx-background-radius: 14;
-                                       -fx-cursor: hand;"
-                                text="Data Structure" />
 
-                        <Button fx:id="btnAlgorithm" onAction="#openAlgorithm"
-                                maxWidth="300"
-                                style="-fx-background-color: #00BFA6;
-                                       -fx-text-fill: white;
-                                       -fx-font-size: 18px;
-                                       -fx-font-weight: bold;
-                                       -fx-background-radius: 14;
-                                       -fx-cursor: hand;"
-                                text="Algorithm" />
-
-                        <Button fx:id="btnAIVisual" onAction="#openAIVisual"
-                                maxWidth="300"
-                                style="-fx-background-color: #8A2BE2;
-                                       -fx-text-fill: white;
-                                       -fx-font-size: 18px;
-                                       -fx-font-weight: bold;
-                                       -fx-background-radius: 14;
-                                       -fx-cursor: hand;"
-                                text="AI Visual" />
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
                     </VBox>
                 </VBox>
 
             </children>
         </VBox>
 
-<<<<<<< HEAD
         <!-- Settings MenuButton -->
         <MenuButton fx:id="btnSettings"
                     AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
@@ -246,45 +163,6 @@
                 <Tooltip text="Settings"/>
             </tooltip>
         </MenuButton>
-=======
-        <!-- Floating Exit Button -->
-        <Button fx:id="btnExit"
-                AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20"
-                prefWidth="60" prefHeight="60"
-                style="-fx-background-color: #E63946;
-                       -fx-background-radius: 30;
-                       -fx-cursor: hand;">
-            <graphic>
-                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                    <image>
-                        <Image url="@img/logout.png"/>
-                    </image>
-                </ImageView>
-            </graphic>
-            <tooltip>
-                <Tooltip text="Exit Application"/>
-            </tooltip>
-        </Button>
-
-        <!-- Floating Settings Button -->
-        <Button fx:id="btnSettings"
-                AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
-                prefWidth="55" prefHeight="55"
-                style="-fx-background-color: #2E2E2E;
-                       -fx-background-radius: 28;
-                       -fx-cursor: hand;">
-            <graphic>
-                <ImageView fitHeight="26" fitWidth="26" preserveRatio="true">
-                    <image>
-                        <Image url="@img/settings.png"/>
-                    </image>
-                </ImageView>
-            </graphic>
-            <tooltip>
-                <Tooltip text="Settings"/>
-            </tooltip>
-        </Button>
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
 
     </children>
 </AnchorPane>

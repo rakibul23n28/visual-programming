@@ -31,12 +31,8 @@
                         <Button text="▶ Calculate Sum" onAction="#simulateAddition"
                                 style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
                         <Label text="Generated C++ Code:" style="-fx-font-weight: bold;" />
-<<<<<<< HEAD
-                        <TextFlow fx:id="addCodeFlow" prefHeight="350" style="-fx-background-color: #2c3e50; -fx-padding: 5px; -fx-border-radius: 4;" />
-=======
-                        <TextArea fx:id="addCode" editable="false" prefRowCount="20"
-                                  style="-fx-control-inner-background: #f4f6f7; -fx-font-family: Consolas;" />
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
+                        <TextFlow fx:id="addCodeFlow" prefHeight="350" style="-fx-background-color: #2c3e50; -fx-padding: 5px;" />
+
                     </VBox>
                     <VBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #fef9e7; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 6;">
                         <Label text="Simulation" style="-fx-font-weight: bold; -fx-text-fill: #d35400;" />
@@ -48,6 +44,7 @@
                     </VBox>
                 </SplitPane>
             </Tab>
+
 
             <!-- Factorial Function -->
             <Tab text="Factorial Function">

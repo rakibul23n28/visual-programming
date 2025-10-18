@@ -19,25 +19,26 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) {
         try {
-            LoginController loginController1 = prepareLoginScene();
+            // Prepare all scenes and controllers
+            LoginController loginController = prepareLoginScene();
             SignupController signupController = prepareSignUpScene();
             HelloController dashboardController = prepareDashboard();
 
-<<<<<<< HEAD
             // Set stage and scenes for HelloController
             dashboardController.setPrimaryStage(primaryStage);
             dashboardController.setLoginScene(loginScene);
             dashboardController.setDashboardScene(dashboardScene);
 
-=======
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
-            loginController1.setPrimaryStage(primaryStage);
-            loginController1.setSignUpScene(signupScene);
-            loginController1.setDashboardScene(dashboardScene);
+            // Set stage and scenes for LoginController
+            loginController.setPrimaryStage(primaryStage);
+            loginController.setSignUpScene(signupScene);
+            loginController.setDashboardScene(dashboardScene);
 
+            // Set stage and scene for SignupController
             signupController.setPrimaryStage(primaryStage);
             signupController.setSceneLogin(loginScene);
 
@@ -48,46 +49,41 @@ public class HelloApplication extends Application {
             // Make the window responsive
             primaryStage.setMinWidth(400);
             primaryStage.setMinHeight(300);
-
             primaryStage.setMaximized(true);
 
         } catch (Exception e) {
             System.err.println("Error loading FXML or CSS: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     private LoginController prepareLoginScene() throws IOException {
         FXMLLoader loginLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Parent loginRoot = loginLoader.load();
-        LoginController loginController1 = loginLoader.getController();
+        LoginController loginController = loginLoader.getController();
         loginScene = new Scene(loginRoot, 800, 600);
-//        loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/login.css")).toExternalForm());
+
         loginScene.widthProperty().addListener((obs, oldVal, newVal) -> {
-            loginLoader.<LoginController>getController().backgroundImage.setFitWidth(newVal.doubleValue());
+            loginController.backgroundImage.setFitWidth(newVal.doubleValue());
         });
         loginScene.heightProperty().addListener((obs, oldVal, newVal) -> {
-            loginLoader.<LoginController>getController().backgroundImage.setFitHeight(newVal.doubleValue());
+            loginController.backgroundImage.setFitHeight(newVal.doubleValue());
         });
 
-        return loginController1;
+        return loginController;
     }
 
-
-    private  SignupController prepareSignUpScene() throws IOException {
+    private SignupController prepareSignUpScene() throws IOException {
         FXMLLoader signUpLoader = new FXMLLoader(getClass().getResource("signup-form.fxml"));
         Parent signUpRoot = signUpLoader.load();
         SignupController signupController = signUpLoader.getController();
-<<<<<<< HEAD
-        signupScene = new Scene(signUpRoot, 800,600);
-=======
-        signupScene = new Scene(signUpRoot);
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
-//        signupScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/login.css")).toExternalForm());
+        signupScene = new Scene(signUpRoot, 800, 600);
+
         signupScene.widthProperty().addListener((obs, oldVal, newVal) -> {
-            signUpLoader.<SignupController>getController().backgroundImage.setFitWidth(newVal.doubleValue());
+            signupController.backgroundImage.setFitWidth(newVal.doubleValue());
         });
         signupScene.heightProperty().addListener((obs, oldVal, newVal) -> {
-            signUpLoader.<SignupController>getController().backgroundImage.setFitHeight(newVal.doubleValue());
+            signupController.backgroundImage.setFitHeight(newVal.doubleValue());
         });
 
         return signupController;
@@ -97,18 +93,7 @@ public class HelloApplication extends Application {
         FXMLLoader dashboardLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Parent dashboardRoot = dashboardLoader.load();
         HelloController dashboardController = dashboardLoader.getController();
-<<<<<<< HEAD
-        dashboardScene = new Scene(dashboardRoot, 800,600);
-=======
-        dashboardScene = new Scene(dashboardRoot);
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
-//        dashboardScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
-//        dashboardScene.widthProperty().addListener((obs, oldVal, newVal) -> {
-//            dashboardLoader.<DashboardController>getController().backgroundImage.setFitWidth(newVal.doubleValue());
-//        });
-//        dashboardScene.heightProperty().addListener((obs, oldVal, newVal) -> {
-//            dashboardLoader.<DashboardController>getController().backgroundImage.setFitHeight(newVal.doubleValue());
-//        });
+        dashboardScene = new Scene(dashboardRoot, 800, 600);
 
         return dashboardController;
     }

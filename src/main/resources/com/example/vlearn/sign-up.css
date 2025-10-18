@@ -37,9 +37,6 @@
     -fx-background-radius: 5;
     -fx-cursor: hand;
 }
-<<<<<<< HEAD
-
-
 .login-form {
     -fx-background-color: #ffffff;
     -fx-padding: 40;
@@ -50,5 +47,3 @@
     -fx-min-width: 300;
     -fx-max-height: 400;
 }
-=======
->>>>>>> f1b259cc68276d4a9dd787fafa2d358bd9478c3e
