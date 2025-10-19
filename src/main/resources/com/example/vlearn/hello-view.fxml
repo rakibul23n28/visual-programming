@@ -22,7 +22,7 @@
                 style="-fx-fill: radial-gradient(center 50% 50%, radius 100%, #FF00FF33, transparent);" />
 
         <!-- Title -->
-        <Label alignment="CENTER" contentDisplay="CENTER" text="Visual Learning"
+        <Label alignment="CENTER" contentDisplay="CENTER" text="vSimulations"
                textAlignment="CENTER" textFill="#00FFFF"
                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="30.0">
             <font>

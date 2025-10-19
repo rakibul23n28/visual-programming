@@ -9,13 +9,13 @@
 <StackPane fx:id="root" xmlns="http://javafx.com/javafx/17"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="com.example.vlearn.controller.SignupController"
-           stylesheets="@sign-up.css"
+           stylesheets="@login.css"
            style="-fx-background-color: linear-gradient(to bottom right, #0f0f1f, #1a1a3f);">
 
     <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600" preserveRatio="false"/>
 
     <VBox alignment="CENTER" spacing="20" styleClass="login-form">
-        <Label text="Signup" styleClass="title"/>
+        <Label text="vSimulation" styleClass="title"/>
         <TextField fx:id="firstNameField" promptText="First name"  styleClass="input-field"/>
         <TextField fx:id="lastNameField" promptText="Last name" styleClass="input-field"/>
         <TextField fx:id="usernameField" promptText="User name" styleClass="input-field"/>

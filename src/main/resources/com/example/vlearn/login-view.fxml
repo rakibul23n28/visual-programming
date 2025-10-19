@@ -15,7 +15,7 @@
     <ImageView fx:id="backgroundImage" fitWidth="800" fitHeight="600"/>
 
     <VBox alignment="CENTER" spacing="20" styleClass="login-form">
-        <Label text="Welcome" styleClass="title"/>
+        <Label text="vSimulation" styleClass="title"/>
         <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
         <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field" onAction="#handleLogin"/>
         <Button text="Login" onAction="#handleLogin" styleClass="login-button"/>
