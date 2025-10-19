@@ -33,4 +33,9 @@ module com.example.vlearn {
 
     exports com.example.vlearn.models;
     opens com.example.vlearn.models to javafx.fxml;
+    exports com.example.vlearn.server;
+    opens com.example.vlearn.server to javafx.fxml;
+
+    exports com.example.vlearn.network;
+    opens com.example.vlearn.network to javafx.fxml;
 }

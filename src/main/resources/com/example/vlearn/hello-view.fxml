@@ -33,12 +33,57 @@
             </style>
         </Label>
 
+
+
+        <!-- Expandable Help Pane -->
+        <VBox fx:id="helpRequestPane"
+              AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
+              prefWidth="0" maxWidth="250" prefHeight="350"
+              opacity="0"
+              style="-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 10; -fx-padding: 10;"
+              spacing="10">
+            <children>
+
+                <!-- Help Section Title -->
+                <Label text="Help Requests" textFill="#00FFFF">
+                    <font>
+                        <Font name="Arcade Classic" size="18" />
+                    </font>
+                </Label>
+
+                <!-- Help Input Field -->
+                <TextField fx:id="txtHelpMessage" promptText="Enter help message"
+                           style="-fx-background-radius: 8; -fx-padding: 5;"/>
+
+                <!-- Send Help Button -->
+                <Button fx:id="btnSendHelp" text="Request Help" onAction="#onSendHelp"
+                        style="-fx-background-color: linear-gradient(to right, #00FFFF, #1E90FF);
+                               -fx-text-fill: white;
+                               -fx-font-family: 'Arcade Classic';
+                               -fx-background-radius: 12;
+                               -fx-cursor: hand;" />
+
+                <!-- List of Requests -->
+                <ListView fx:id="requestListView"
+                          prefHeight="240"
+                          style="-fx-background-color: #1a1a3f; -fx-text-fill: white;" />
+            </children>
+        </VBox>
+        <!-- Toggle Requests Button -->
+        <Button fx:id="btnShowRequests" text="Helping Requests"
+                onAction="#toggleHelpRequests"
+                AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
+                style="-fx-background-color: linear-gradient(to right, #00ff33, #12551b);
+                       -fx-text-fill: #FFFFFF;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Arcade Classic';
+                       -fx-background-radius: 12;
+                       -fx-cursor: hand;" />
+
         <!-- Main Sections -->
         <VBox spacing="50" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="0"
               AnchorPane.rightAnchor="0" AnchorPane.topAnchor="150.0" alignment="CENTER">
-
             <children>
-
                 <!-- Programming Basics Section -->
                 <VBox spacing="15" alignment="CENTER">
                     <Label text="PROGRAMMING BASICS" textFill="#FF00FF">
@@ -94,11 +139,8 @@
                                        -fx-background-radius: 16;
                                        -fx-cursor: hand;
                                        -fx-effect: dropshadow(gaussian, #FF4500, 3, 0.5, 0, 0);" text="ALGORITHM" />
-
-
                     </VBox>
                 </VBox>
-
             </children>
         </VBox>
 
