@@ -17,6 +17,7 @@ public class ServerMain {
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 ClientHandler handler = new ClientHandler(clientSocket, clients);
+                System.out.println("New client connected from " + clientSocket.getInetAddress().getHostName());
                 clients.add(handler);
                 handler.start();
             }

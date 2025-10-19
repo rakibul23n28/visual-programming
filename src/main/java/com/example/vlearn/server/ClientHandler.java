@@ -21,15 +21,24 @@ public class ClientHandler extends Thread {
     public void run() {
         try {
             setupStreams();
-            requestUsername();
-            broadcast(username + " joined the network.", this);
 
+            // ✅ First message should be the username from client
+            username = reader.readLine();
+            if (username == null || username.trim().isEmpty()) {
+                username = "User_" + (int) (Math.random() * 1000);
+            }
+
+            System.out.println(username + " connected.");
+            broadcast(username + " joined the network.");
+
+            // ✅ Waiting for client messages
             String message;
             while ((message = reader.readLine()) != null) {
                 handleMessage(message);
             }
+
         } catch (IOException e) {
-            System.out.println(username + " disconnected.");
+            System.out.println(username + " disconnected due to error.");
         } finally {
             disconnect();
         }
@@ -40,62 +49,58 @@ public class ClientHandler extends Thread {
         writer = new PrintWriter(socket.getOutputStream(), true);
     }
 
-    private void requestUsername() throws IOException {
-        writer.println("Enter your username:");
-        username = reader.readLine();
-        if (username == null || username.trim().isEmpty()) {
-            username = "User_" + (int) (Math.random() * 1000);
-        }
-    }
-
     private void handleMessage(String message) {
-        if (message.startsWith("PRIVATE:")) {
-            // Format: PRIVATE:recipient:message
+        if (message.startsWith("/help")) {  // ✅ Help request
+            String helpText = message.substring(5).trim();
+            if (helpText.isEmpty()) helpText = "Need help!";
+            broadcast("Help requested by " + username + ": " + helpText);
+        }
+        else if (message.startsWith("PRIVATE:")) { // ✅ Private message
             String[] parts = message.split(":", 3);
             if (parts.length == 3) {
-                String targetUser = parts[1];
-                String privateMsg = parts[2];
-                sendPrivateMessage(targetUser, privateMsg);
+                sendPrivateMessage(parts[1], parts[2]);
             } else {
-                writer.println("Invalid private message format. Use: PRIVATE:recipient:message");
+                writer.println("⚠ Invalid format! Use: PRIVATE:username:message");
             }
-        } else {
-            // Broadcast all other messages as help requests
-            broadcast("🆘 Help requested by " + username + ": " + message, this);
+        }
+        else { // ✅ Normal chat message
+            broadcast(username + ": " + message);
         }
     }
 
-    private void broadcast(String msg, ClientHandler exclude) {
+    // ✅ Send message to all connected clients
+    private void broadcast(String msg) {
         for (ClientHandler client : clients) {
-            if (client != exclude) {
-                client.writer.println(msg);
-            }
+            client.writer.println(msg);
         }
+        System.out.println("[Broadcast] " + msg);
     }
 
+    // ✅ Send private message to specific user
     private void sendPrivateMessage(String recipient, String msg) {
-        boolean found = false;
+        System.out.println("[Send] " + recipient);
+        System.out.println(msg + " message" + clients.toString());
         for (ClientHandler client : clients) {
-            if (client.username.equalsIgnoreCase(recipient)) {
+            if (client.username.equalsIgnoreCase(recipient.trim())) {
+                System.out.println(client.username);
                 client.writer.println("Private from " + username + ": " + msg);
-                writer.println("To " + recipient + ": " + msg); // confirm sender
-                found = true;
-                break;
+                writer.println("✅ Sent to " + recipient + ": " + msg);
+                return;
             }
         }
-        if (!found) {
-            writer.println("User " + recipient + " not found.");
-        }
+        writer.println("⚠ User " + recipient + " not found.");
     }
 
+    // ✅ Handle clean disconnection
     private void disconnect() {
         try {
-            if (socket != null) socket.close();
+            if (!socket.isClosed()) socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             clients.remove(this);
-            broadcast(username + " left the network.", this);
+            broadcast(username + " left the network.");
+            System.out.println(username + " disconnected.");
         }
     }
 }

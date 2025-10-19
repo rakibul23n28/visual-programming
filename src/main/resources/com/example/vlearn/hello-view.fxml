@@ -15,7 +15,7 @@
 
     <children>
 
-        <!-- Neon Glow Circles -->
+        <!-- Background Circles -->
         <Circle radius="180" layoutX="200" layoutY="150"
                 style="-fx-fill: radial-gradient(center 50% 50%, radius 100%, #00FFFF33, transparent);" />
         <Circle radius="140" layoutX="700" layoutY="400"
@@ -33,58 +33,10 @@
             </style>
         </Label>
 
-
-
-        <!-- Expandable Help Pane -->
-        <VBox fx:id="helpRequestPane"
-              AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
-              prefWidth="0" maxWidth="250" prefHeight="350"
-              opacity="0"
-              style="-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 10; -fx-padding: 10;"
-              spacing="10">
-            <children>
-
-                <!-- Help Section Title -->
-                <Label text="Help Requests" textFill="#00FFFF">
-                    <font>
-                        <Font name="Arcade Classic" size="18" />
-                    </font>
-                </Label>
-
-                <!-- Help Input Field -->
-                <TextField fx:id="txtHelpMessage" promptText="Enter help message"
-                           style="-fx-background-radius: 8; -fx-padding: 5;"/>
-
-                <!-- Send Help Button -->
-                <Button fx:id="btnSendHelp" text="Request Help" onAction="#onSendHelp"
-                        style="-fx-background-color: linear-gradient(to right, #00FFFF, #1E90FF);
-                               -fx-text-fill: white;
-                               -fx-font-family: 'Arcade Classic';
-                               -fx-background-radius: 12;
-                               -fx-cursor: hand;" />
-
-                <!-- List of Requests -->
-                <ListView fx:id="requestListView"
-                          prefHeight="240"
-                          style="-fx-background-color: #1a1a3f; -fx-text-fill: white;" />
-            </children>
-        </VBox>
-        <!-- Toggle Requests Button -->
-        <Button fx:id="btnShowRequests" text="Helping Requests"
-                onAction="#toggleHelpRequests"
-                AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
-                style="-fx-background-color: linear-gradient(to right, #00ff33, #12551b);
-                       -fx-text-fill: #FFFFFF;
-                       -fx-font-size: 14px;
-                       -fx-font-family: 'Arcade Classic';
-                       -fx-background-radius: 12;
-                       -fx-cursor: hand;" />
-
-        <!-- Main Sections -->
+        <!-- Main Content -->
         <VBox spacing="50" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="0"
               AnchorPane.rightAnchor="0" AnchorPane.topAnchor="150.0" alignment="CENTER">
             <children>
-                <!-- Programming Basics Section -->
                 <VBox spacing="15" alignment="CENTER">
                     <Label text="PROGRAMMING BASICS" textFill="#FF00FF">
                         <font>
@@ -106,7 +58,6 @@
                                    -fx-effect: dropshadow(gaussian, #FF00FF, 3, 0.5, 0, 0);" text="START" />
                 </VBox>
 
-                <!-- Simulation Path Section -->
                 <VBox spacing="20" alignment="CENTER">
                     <Label text="SIMULATION PATH" textFill="#00FFFF">
                         <font>
@@ -117,7 +68,6 @@
                         </style>
                     </Label>
                     <VBox spacing="15" alignment="CENTER">
-
                         <Button fx:id="btnDataStructure" onAction="#openDataStructure"
                                 maxWidth="300"
                                 style="-fx-background-color: linear-gradient(to right, #00FFFF, #1E90FF);
@@ -144,7 +94,52 @@
             </children>
         </VBox>
 
-        <!-- Settings MenuButton -->
+        <!-- Help Request Pane (Always on top) -->
+        <VBox fx:id="helpRequestPane"
+              AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
+              prefWidth="0" maxWidth="400" prefHeight="400"
+              opacity="0"
+              style="-fx-background-color: rgba(0,0,0,0.7); -fx-background-radius: 10; -fx-padding: 10;"
+              spacing="10"
+              pickOnBounds="true">
+            <children>
+                <Label text="Help Requests" textFill="#00FFFF">
+                    <font>
+                        <Font name="Arcade Classic" size="18" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="txtHelpMessage" promptText="Enter help message"
+                           style="-fx-background-radius: 8; -fx-padding: 5;"/>
+
+                <Button fx:id="btnSendHelp" text="Request Help" onAction="#onSendHelp"
+                        style="-fx-background-color: linear-gradient(to right, #d35050, #e17b5d);
+                       -fx-text-fill: white;
+                       -fx-font-family: 'Arcade Classic';
+                       -fx-background-radius: 12;
+                       -fx-cursor: hand;" />
+
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                            style="-fx-background-color: transparent; -fx-hbar-policy: never;">
+                    <VBox fx:id="requestVBox" spacing="0"
+                          style="-fx-background-color: transparent;" />
+                </ScrollPane>
+            </children>
+        </VBox>
+
+        <!-- Show/Hide Help Button (move this AFTER helpRequestPane) -->
+        <Button fx:id="btnShowRequests" text="Helping Requests"
+                onAction="#toggleHelpRequests"
+                AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"
+                style="-fx-background-color: linear-gradient(to right, #00ff33, #12551b);
+               -fx-text-fill: #FFFFFF;
+               -fx-font-size: 14px;
+               -fx-font-family: 'Arcade Classic';
+               -fx-font: bold;
+               -fx-background-radius: 12;
+               -fx-cursor: hand;" />
+
+        <!-- Settings Menu -->
         <MenuButton fx:id="btnSettings"
                     AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
                     text=""
@@ -156,7 +151,6 @@
                     graphicTextGap="0"
                     focusTraversable="false">
 
-            <!-- Settings Icon -->
             <graphic>
                 <Label text="⚙" style="-fx-text-fill: #00FFFF; -fx-font-size: 20px;"/>
             </graphic>
