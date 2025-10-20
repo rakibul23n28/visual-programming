@@ -120,8 +120,16 @@ public class BinaryTreeVisualizerController {
             if (node.left == null) return node.right;
             if (node.right == null) return node.left;
 
+            // Node with two children: Get the inorder successor (smallest in the right subtree)
             TreeNode successor = minValueNode(node.right);
+
+            // Copy the inorder successor's content to this node
             node.value = successor.value;
+
+            // 👇 FIX: Update the UI text of the current node with the new value
+            updateNodeText(node.box, node.value);
+
+            // Delete the inorder successor
             node.right = deleteNode(node.right, successor.value, new AtomicBoolean(true));
         }
         return node;
@@ -314,6 +322,19 @@ public class BinaryTreeVisualizerController {
         vbox.setSpacing(-15);
         vbox.setStyle("-fx-alignment: center;");
         return vbox;
+    }
+
+    /**
+     * Updates the Text component within a node's VBox on the JavaFX thread.
+     * This is the essential fix for the UI not updating during internal node deletion.
+     */
+    private void updateNodeText(VBox box, int newValue) {
+        // Run on the JavaFX Application Thread since it updates the UI
+        Platform.runLater(() -> {
+            if (box != null && box.getChildren().size() > 1 && box.getChildren().get(1) instanceof Text text) {
+                text.setText(String.valueOf(newValue));
+            }
+        });
     }
 
     private void drawLine(double x1, double y1, double x2, double y2) {
